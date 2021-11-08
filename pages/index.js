@@ -1,27 +1,20 @@
-import { useEffect } from 'react'
-import Head from 'next/head'
-import Image from 'next/image'
 import tw from "tailwind-styled-components"
-import mapboxgl from '!mapbox-gl'
-
-
-mapboxgl.accessToken = 'pk.eyJ1IjoidGhhdGplbnN0ZXIiLCJhIjoiY2tuajd4OHFsMmdsOTJ3bWlza2Fuc255ayJ9.66puCpcZFfNVTprZZ4D2JA';
+import Map from './components/Map'
 
 export default function Home() {
 
-  useEffect(() => {
-      const map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v11',
-      center: [-99.29011, 39.39172],
-      zoom: 3,    
-    })
-  })
-
   return (
     <Wrapper>
-      <Map id="map"></Map>
-      <ActionItems>Start</ActionItems>
+      <Map />
+      <ActionItems>
+        <Header>
+          <UberLogo src="./uber-logo.png"/>
+          <Profile>
+            <Name>Jenny Dinh</Name>
+            <UserImage src="./placeholder-image.jpeg"/>
+          </Profile>
+        </Header>
+      </ActionItems>
     </Wrapper>
   )
 }
@@ -33,11 +26,37 @@ const Wrapper = tw.div`
   h-screen
 `
 
-const Map = tw.div`
-  bg-indigo-600
-  flex-1
-`
-
 const ActionItems = tw.div`
   flex-1
+  p-4
 `
+
+const Header = tw.div`
+  flex
+  justify-between
+`
+
+const UberLogo = tw.img`
+  h-28
+`
+
+const Profile = tw.div`
+  flex
+  items-center
+`
+
+const Name = tw.div`
+  mr-4
+  w-20
+`
+
+const UserImage = tw.img`
+  h-12
+  w-12
+  rounded-full
+  border
+  border-gray-200
+  p-px
+  object-cover
+`
+
