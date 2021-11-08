@@ -1,4 +1,5 @@
 import tw from "tailwind-styled-components"
+import Link from 'next/link'
 import Map from './components/Map'
 
 export default function Home() {
@@ -15,10 +16,12 @@ export default function Home() {
           </Profile>
         </Header>
         <ActionBtnContainer>
-          <ActionBtn>
-            <ActionBtnImg src='./uber-x.jpeg'/>
-            Uber X
-          </ActionBtn>
+          <Link href="/search">
+            <ActionBtn>
+              <ActionBtnImg src='./uber-x.jpeg'/>
+              Uber X
+            </ActionBtn>
+          </Link>
           <ActionBtn>
             <ActionBtnImg src='./uber-black.jpeg'/>
             Uber Black
