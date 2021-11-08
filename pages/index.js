@@ -14,6 +14,21 @@ export default function Home() {
             <UserImage src="./placeholder-image.jpeg"/>
           </Profile>
         </Header>
+        <ActionBtnContainer>
+          <ActionBtn>
+            <ActionBtnImg src='./uber-x.jpeg'/>
+            Uber X
+          </ActionBtn>
+          <ActionBtn>
+            <ActionBtnImg src='./uber-black.jpeg'/>
+            Uber Black
+          </ActionBtn>
+          <ActionBtn>
+            <ActionBtnImg src='./reserve.jpeg'/>
+            Reserve
+          </ActionBtn>
+        </ActionBtnContainer>
+        <InputButton>Where to?</InputButton>
       </ActionItems>
     </Wrapper>
   )
@@ -22,7 +37,6 @@ export default function Home() {
 const Wrapper = tw.div`
   flex 
   flex-col 
-  bg-red-300
   h-screen
 `
 
@@ -47,6 +61,7 @@ const Profile = tw.div`
 
 const Name = tw.div`
   mr-4
+  text-sm
   w-20
 `
 
@@ -59,4 +74,36 @@ const UserImage = tw.img`
   p-px
   object-cover
 `
+const ActionBtnContainer = tw.div`
+  flex
+`
 
+const ActionBtn = tw.div`
+  flex-1
+  m-1
+  h-32
+  flex
+  items-center
+  flex-col
+  justify-center
+  rounded-lg
+  border
+  border-gray-500
+  transform
+  hover:scale-105
+  transition
+  text-xl
+`
+
+const ActionBtnImg = tw.img`
+  h-3/5
+`
+
+const InputButton = tw.div`
+  h-20
+  bg-gray-200
+  p-4
+  flex
+  items-center
+  mt-8
+`
